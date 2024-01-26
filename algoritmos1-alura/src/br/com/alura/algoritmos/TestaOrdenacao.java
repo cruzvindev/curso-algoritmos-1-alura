@@ -11,7 +11,7 @@ public class TestaOrdenacao {
         };
 
         //selectionSort(produtos, produtos.length - 1);
-        novoSort(produtos, produtos.length);
+        insertionSort(produtos, produtos.length);
         
         for(Produto produto : produtos){
             System.out.println(produto.getNome() + " custa " + produto.getPreco());
@@ -19,8 +19,8 @@ public class TestaOrdenacao {
 
     }
 
-    private static void novoSort(Produto[] produtos, int quantidadeDeElementos) {
-        for(int atual = 0; atual < quantidadeDeElementos; atual++){
+    private static void insertionSort(Produto[] produtos, int quantidadeDeElementos) {
+        for(int atual = 1; atual < quantidadeDeElementos; atual++){
             int analise = atual;
             while(analise > 0 && produtos[analise].getPreco() < produtos[analise-1].getPreco()){
                 System.out.println("Estou trocando " + analise + " com " + (analise - 1));
